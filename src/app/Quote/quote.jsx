@@ -8,8 +8,8 @@ const useQuote = (api) => {
   const fetchQuote = async () => {
     try {
       const response = await axios.get(api);
-      setQuote(response?.data);
-      console.log(response.data);
+      setQuote(response?.data.content);
+      console.log(response.data.content);
     } catch (error) {
       setError("Error fetching quote");
     }

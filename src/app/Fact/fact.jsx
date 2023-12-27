@@ -4,9 +4,6 @@ import Image from "next/image";
 import "./fact.css";
 
 const Fact = ({ openModal, dataSet, selectedIndex }) => {
-  if (!dataSet) {
-    return <p>Loading...</p>; // or render a loading indicator
-  }
   return (
     <div className="container mt-20 lg:mt-[80px]">
       {dataSet.map((data, index) => {
@@ -16,15 +13,17 @@ const Fact = ({ openModal, dataSet, selectedIndex }) => {
             className="item"
             onClick={() => openModal(data.id)}
           >
-            <Image
-              src="/wrap.png"
-              width={300}
-              height={200}
-              alt="wrap"
-              layout="fit"
-              objectFit="cover"
-              className="wrap-img "
-            />
+            {data.image && (
+              <Image
+                src="/wrap.png"
+                width={300}
+                height={200}
+                alt="wrap"
+                layout="fit"
+                objectFit="cover"
+                className="wrap-img "
+              />
+            )}
             <span className="index text-white"> {index + 1}</span>
           </div>
         );
