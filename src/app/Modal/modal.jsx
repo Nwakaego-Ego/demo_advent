@@ -22,11 +22,13 @@ const ReactModal = ({ closeModal, modalIsOpen, dataSet, selectedData }) => {
         onRequestClose={closeModal}
         style={customStyles}
       >
-        <div>
-          {selectedData && <img src={selectedData.image} />}
-          {selectedData && <p>{selectedData.quote}</p>}
-          {selectedData && <p>{selectedData.trivia}</p>}
-        </div>
+        {selectedData && (
+          <div>
+            {selectedData.image && <img src={selectedData.image} alt="Image" />}
+            {selectedData.quote && <p>{selectedData.quote}</p>}
+            {selectedData.trivia && <p>{selectedData.trivia}</p>}
+          </div>
+        )}
       </Modal>
     </div>
   );

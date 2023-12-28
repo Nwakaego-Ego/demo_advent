@@ -9,7 +9,7 @@ export const QuoteContext = createContext();
 
 export default function Home() {
   const api = "https://api.quotable.io/random";
-  const { fetchQuote } = useQuote(api);
+  const { fetchQuote, quote } = useQuote(api);
 
   useEffect(() => {
     fetchQuote();
@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <main className="">
-      <QuoteContext.Provider value={fetchQuote}>
+      <QuoteContext.Provider value={{ fetchQuote, quote }}>
         <Data />
       </QuoteContext.Provider>
       <Dashboard />

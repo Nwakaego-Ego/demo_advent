@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { QuoteContext } from "./page";
 
 const fetchData = () => {
-  const fetchQuote = useContext(QuoteContext);
+  const quote = useContext(QuoteContext);
   const dataSet = [
     {
       id: 1,
@@ -10,7 +10,7 @@ const fetchData = () => {
     },
     {
       id: 2,
-      quote: fetchQuote(),
+      quote: quote,
     },
     {
       id: 3,

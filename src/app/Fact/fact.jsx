@@ -24,6 +24,7 @@ const Fact = ({ openModal, dataSet, selectedIndex }) => {
                 className="wrap-img "
               />
             )}
+
             <span className="index text-white"> {index + 1}</span>
           </div>
         );
